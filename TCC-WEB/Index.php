@@ -52,6 +52,7 @@
             <a href="Index.php">ja possui cadastro?</a>
             <br>
             <a href="Cadastro-Produto.php">cadastro produto</a></center>
+            <a href="home.php">...</a>
    </div>
             
         </div>
