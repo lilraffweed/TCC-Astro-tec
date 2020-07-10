@@ -160,7 +160,6 @@ CREATE TABLE `tbusuario` (
   `idUsuario` int(11) NOT NULL,
   `numeroUsuario` varchar(13) NOT NULL,
   `nomeUsuario` varchar(100) NOT NULL,
-  `sobrenomeUsuario` varchar(100) NOT NULL,
   `cpfUsuario` varchar(14) NOT NULL,
   `rgUsuario` varchar(12) NOT NULL,
   `emailUsuario` varchar(100) NOT NULL,
@@ -172,8 +171,8 @@ CREATE TABLE `tbusuario` (
 -- Extraindo dados da tabela `tbusuario`
 --
 
-INSERT INTO `tbusuario` (`idUsuario`, `numeroUsuario`, `nomeUsuario`, `sobrenomeUsuario`, `cpfUsuario`, `rgUsuario`, `emailUsuario`, `senhaUsuario`, `imagemUsuario`) VALUES
-(1, '', 'Rafael', 'Oliveira', '12345678911', '123456789', 'oliveirasrafael.rs@gmail.com', 123, NULL);
+INSERT INTO `tbusuario` (`idUsuario`, `numeroUsuario`, `nomeUsuario`, `cpfUsuario`, `rgUsuario`, `emailUsuario`, `senhaUsuario`, `imagemUsuario`) VALUES
+(1, '', 'Rafael Oliveira', '12345678911', '123456789', 'oliveirasrafael.rs@gmail.com', 123, NULL);
 
 --
 -- Índices para tabelas despejadas
