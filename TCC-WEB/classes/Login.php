@@ -1,23 +1,29 @@
 <?php
+    include_once "conexao.php";
 
-    header("Cache-Control: no-cache, no-store, must-revalidate"); 
+    session_start();
 
-    require('conexao.php');
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $aux = 0;
 
-    $email = isset($_GET['email'])? $_GET['email'] :'';
-    $senha = isset($_GET['senha'])? $_GET['senha'] :'';
+    $conexao = abrirConexao();
 
-    $sql = "SELECT idUsuario FROM tbusuario WHERE emailUsuario like ? and senhaUsuario like ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(1, $email);
-    $stmt->bindParam(2, $senha);
+    $sql = "SELECT * FROM tbusuario";
+    $consulta = $conexao->query($sql);
 
-    if($stmt->execute()){
-            $r = $stmt->fetch(PDO::FETCH_ASSOC);
-        if($r['idUsuario'] === null){
-            echo ('0');
-        }else{
-            echo ($r['idUsuario']);
+    while($linhaSelect = mysqli_fetch_array($consulta)){
+        if($email == $linhaSelect['emailUsuario'] && $senha == $linhaSelect['senhaUsuario']){
+            $aux = 1;
+            $idUsuario = $linhaSelect['idUsuario'];
         }
     }
+    if($aux == 1){
+        $_SESSION['idLogin'] = $idUsuario;
+        header('Location: ../Index.php');
+    }else{
+        header('Location: ../Tela-Login.php');
+    }
+        
+    $conexao->close();
 ?>

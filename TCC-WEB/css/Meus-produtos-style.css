@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+*{
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+ 
+}
+
+.navbar{
+
+    background-color: #407DFC;
+    
+}
+
+
+#checked:hover{
+
+    filter: brightness(80%);
+
+}
+
+#Canceled:hover{
+
+    filter: brightness(90%);
+
+}

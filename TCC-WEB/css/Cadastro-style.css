@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+*{
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg,#54b3e2, #0e31cce1,#0E8DCC);
+    animation: colors 10s ease infinite;
+}
+
+@keyframes colors{
+
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+#Cadastrar{
+
+    background-color: #1FDE2C;
+    color: #fff;
+
+}
+
+#Cadastrar:hover{
+
+    filter: brightness(80%);
+
+}
+
+.facebook{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    background-color:#3b5998;
+    
+}
+
+.facebook:hover{
+
+    filter: brightness(95%);
+
+}
+
+.Google{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    background-color:#db4a39;
+
+}
+
+.Google:hover{
+
+    filter: brightness(95%);
+
+}
+
+.Git{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    color: #fff;
+    border: none;
+    background-color:#24292e;
+
+
+}
+
+.Git:hover{
+
+    filter: brightness(95%);
+
+}

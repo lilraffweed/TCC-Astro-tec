@@ -1,0 +1,1 @@
+var intervalo = setInterval(function() { $('#setTime').load('../Chat.php'); }, 3000);

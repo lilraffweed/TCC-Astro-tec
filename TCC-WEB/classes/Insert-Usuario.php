@@ -1,28 +1,31 @@
 <?php
-
     header("Cache-Control: no-cache, no-store, must-revalidate"); 
 
-    require 'Conexao.php';
-
-    $numero = isset($_GET['numero'])? $_GET['numero'] :'';
-    $nome = isset($_GET['nome'])? $_GET['nome'] :'';
-    $sobrenome = isset($_GET['sobrenome'])? $_GET['sobrenome'] :'';	
-    $cpf = isset($_GET['cpf'])? $_GET['cpf'] :'';	
-    $rg = isset($_GET['rg'])? $_GET['rg'] :'';
-    $email = isset($_GET['email'])? $_GET['email'] :'';	
-    $senha = isset($_GET['senha'])? $_GET['senha'] :'';	
-
-
-    try{		
-		$stmt = $pdo->prepare("INSERT INTO tbusuario (numeroUsuario, nomeUsuario, sobrenomeUsuario, cpfUsuario, rgUsuario, emailUsuario, senhaUsuario) 
-        VALUES('$numero', '$nome', '$sobrenome', '$cpf', '$rg', '$email', '$senha')");		
-		$stmt->execute();				 				 		
-		
-	}catch(PDOException $e) {
-
-        echo 'Error: ' . $e->getMessage();
+    include_once "conexao.php";
+    
+    $nome = $_POST['nome'];
+    $endereco = $_POST['endereco'];
+    $cep = $_POST['cep'];
+    $facebook = $_POST['facebook'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $confirmarSenha = $_POST['confirmarSenha'];
+    
+    $conexao = abrirConexao();
+    if($senha === $confirmarSenha){
+        if($nome != '' && $email != '' && $senha != ''){    
+            $instrucaoSQL = "INSERT INTO tbusuario (nomeUsuario, emailUsuario, senhaUsuario) 
+            VALUES ('$nome', '$email', '$senha')";
+        }    
+        $executa = $conexao->query($instrucaoSQL);
         
-	}	
-	$pdo = null;
+        if($executa == 1){
+            header('Location: ../Index.php');
+        }
+    }else{
+        echo "senhas diferentes!!" ;
+    }
+    $conexao->close();
+?>
 
 ?>

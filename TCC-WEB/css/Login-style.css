@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
+*{
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(45deg,#54b3e2, #0e31cce1,#0E8DCC);
+    animation: colors 10s ease infinite;
+}
+
+@keyframes colors{
+
+    0%{
+        background-position: 0% 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+.redirecionar{
+
+    opacity: 80%;
+
+}
+
+#check-text{
+
+   
+    opacity: 90%;
+
+}
+
+#logar{
+
+    background-color: #0e31cce1;
+    color: #fff;
+   
+
+}
+
+#logar:hover{
+
+    filter: brightness(80%);
+
+}
+
+#Cadastrar{
+
+    background-color: #1FDE2C;
+    color: #fff;
+
+}
+
+#Cadastrar:hover{
+
+    filter: brightness(80%);
+
+}
+
+
+
+
+
